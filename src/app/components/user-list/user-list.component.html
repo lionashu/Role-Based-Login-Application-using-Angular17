@@ -1,0 +1,25 @@
+<h2>User List</h2>
+@if(users){
+  <table>
+    <thead>
+      <th>User Id</th>
+      <th>UserName</th>
+      <th>email</th>
+      <th>Role</th>
+    </thead>
+
+    <tbody>
+      @for(user of users; track $index;){
+        <tr>
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.role}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}@else {
+  <p>No Data found!</p>
+}
+<button class="back-button" routerLink="/home">Back to Home Page</button>

@@ -1,0 +1,96 @@
+<mat-card>
+  <mat-card-title>Create new user</mat-card-title>
+  <mat-card-content>
+    <form
+      class="login-form"
+      [formGroup]="registrationForm"
+      (ngSubmit)="confirmRegistration()"
+    >
+      <mat-form-field class="example-full-width">
+        <mat-label>Username</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Enter name here"
+          formControlName="id"
+        />
+        @if(registrationForm.get('id')?.hasError('required')) {
+        <mat-error> Username is required </mat-error>
+        } @else if(registrationForm.get('id')?.hasError('minlength')) {
+        <mat-error> Username has to be at least 5 characters. </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Full Name</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Enter Full Name here"
+          formControlName="name"
+        />
+        @if(registrationForm.get('name')?.hasError('required')) {
+        <mat-error> Full Name is required </mat-error>
+        } @else if(registrationForm.get('name')?.hasError('minlength')) {
+        <mat-error> Full Name has to be at least 5 characters. </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          type="email"
+          placeholder="Enter email here"
+          formControlName="email"
+        />
+        @if(registrationForm.get('email')?.hasError('required')) {
+        <mat-error> email is required </mat-error>
+        } @else if(registrationForm.get('email')?.hasError('email')) {
+        <mat-error> email  should be valid format. </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input
+          type="password"
+          matInput
+          placeholder="Enter name here"
+          formControlName="password"
+        />
+        @if(registrationForm.get('password')?.hasError('required')) {
+        <mat-error> Password is required </mat-error>
+        } @else if(registrationForm.get('password')?.hasError('minlength')) {
+        <mat-error> Password has to be at least 5 characters. </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label> Confirm Password</mat-label>
+        <input
+          type="password"
+          matInput
+          placeholder="Enter name here"
+          formControlName="confirmPassword"
+        />
+        @if(registrationForm.get('confirmPassword')?.hasError('required')) {
+        <mat-error> Password is required </mat-error>
+        } @else if(registrationForm.get('confirmPassword')?.hasError('minlength')) {
+        <mat-error> Password has to be at least 5 characters. </mat-error>
+        }
+      </mat-form-field>
+
+
+      <div>
+        <button mat-raised-button color="accent">Submit</button>
+      </div>
+      <div>
+        <p>
+          <span>Already an account?</span>
+          <a routerLink="/login" routerLinkActive="router-link-active">Login</a>
+        </p>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

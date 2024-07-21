@@ -1,0 +1,8 @@
+<div class="header">
+  <h2>Role Based Authentication By Testy Codeiz</h2>
+  @if(isLoggedIn){
+    <a (click)="logout()">LogOut</a>
+  }@else {
+    <a routerLink="/login">Login</a>
+  }
+</div>

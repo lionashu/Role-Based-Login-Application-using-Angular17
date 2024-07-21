@@ -1,0 +1,13 @@
+<h1>How does Role Based Access System Works?</h1>
+<p>
+  Angular's 17 Authguard work by restrictily access to certain routes or components based on the roles assigned to authentication users.
+</p>
+<div>
+  <ul>
+    <li>if User's role is Admin, they will be able to view all Users.</li>
+    <li>if User's role is Normal, they will be denied access.</li>
+    <li>if User's is not logged in, they will not be genrated access either.</li>
+  </ul>
+  Try it out below !☺
+</div>
+<button mat-flat-button color="primary" routerLink="/users" routerLinkActive="router-link-active"> View User Dashboard</button>

@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": "admin",
+      "name": "Ashish Mishra",
+      "email": "ashish@gmail.com",
+      "password": "admin@123",
+      "role": "admin",
+      "isActive": true
+    },
+    {
+      "id": "ashu123",
+      "name": "ashu mishra",
+      "email": "ashu@gmail.com",
+      "password": "ashu123",
+      "role": "",
+      "isActive": false
+    }
+  ]
+}

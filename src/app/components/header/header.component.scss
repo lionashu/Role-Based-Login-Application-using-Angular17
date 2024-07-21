@@ -1,0 +1,23 @@
+.header{
+  box-sizing: border-box;
+  background-color: palevioletred;
+  color: white;
+  display: flex;
+  font-weight: 600;
+  justify-content: space-between;
+  a{
+    display:flex ;
+    margin-right: 40px;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    &:hover{
+      color: purple;
+    }
+  }
+  h2{
+    margin-top: 10px;
+  }
+
+
+}

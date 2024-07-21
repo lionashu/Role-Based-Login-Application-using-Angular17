@@ -1,0 +1,50 @@
+<mat-card>
+  <mat-card-title>Sign In</mat-card-title>
+  <mat-card-content>
+    <form
+      class="login-form"
+      [formGroup]="loginForm"
+      (ngSubmit)="confirmLogin()"
+    >
+      <mat-form-field class="example-full-width">
+        <mat-label>Username</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Enter name here"
+          formControlName="id"
+        />
+        @if(loginForm.get('id')?.hasError('required')) {
+        <mat-error> Name is required </mat-error>
+        } @else if(loginForm.get('id')?.hasError('minlength')) {
+        <mat-error> Username has to be at least 5 characters. </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input
+          type="password"
+          matInput
+          placeholder="Enter name here"
+          formControlName="password"
+        />
+        @if(loginForm.get('password')?.hasError('required')) {
+        <mat-error> Password is required </mat-error>
+        } @else if(loginForm.get('password')?.hasError('minlength')) {
+        <mat-error> Password has to be at least 5 characters. </mat-error>
+        }
+      </mat-form-field>
+
+      <div>
+        <button mat-raised-button color="accent">Submit</button>
+      </div>
+      <div>
+        <p>
+          <span>Don't have an account?</span>
+          <a routerLink="/register" routerLinkActive="router-link-active">Signup</a>
+        </p>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
